@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+            background-color: #f9f9f9;
+            margin: 20px;
+			font-size: 16px;
+        }
+        .quiz-container {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .submit-btn {
+            display: block;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 60px;
+            font-size: 14px;
+			font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: auto;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .correct-answer {
+            color: green;
+            font-weight: bold;
+        }
+        .wrong-answer {
+            color: red;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 14px;
+			font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="quiz-container">
+    <h1>اختبار قصير في بطاقة الأسبوع الثالث</h1>
+    <form id="quizForm">
+        <!-- حقل اسم الطالب -->
+        <label style="font-weight: bold; font-size: 18px;"> اسم الطالب: </label>
+        <input type="text" id="name" name="name" placeholder="أدخل اسمك هنا" required>
+
+        <!-- الأسئلة -->
+        <div class="question" data-question="q1">
+            <p>1. ما هي الخاصية التي تميز المواد المتجانسة؟</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="c"> تكون مكوناتها متجانسة من مواد صلبة</label>
+                <label><input type="radio" name="q1" value="b"> يمكن رؤية مكوناتها بالعين المجردة</label>
+                <label><input type="radio" name="q1" value="a"> صعوبة فصل مكوناتها</label>
+            </div>
+        </div>
+
+        <div class="question" data-question="q2">
+            <p>2. أي من الخيارات التالية يعتبر مثالاً على مادة غير متجانسة؟</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> ماء البحر</label>
+                <label><input type="radio" name="q2" value="b"> السلطة</label>
+                <label><input type="radio" name="q2" value="c"> الهواء</label>
+            </div>
+        </div>
+
+        <div class="question" data-question="q3">
+            <p>3. ماهو المقصود بمخاليط متجانسة من مواد صلبة تهدف إلى تحسين صفات العنصر الاصلي؟</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> مخاليط متجانسة</label>
+                <label><input type="radio" name="q3" value="b"> السبيكة</label>
+                <label><input type="radio" name="q3" value="c"> الأملاح المعدنية</label>
+            </div>
+        </div>
+		<!-- السؤال الرابع -->
+        <div class="question" data-question="q4">
+            <p>4. أي من التالي مثال على مادة متجانسة؟</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> الحليب</label>
+                <label><input type="radio" name="q4" value="b"> خليط الرمل والحديد</label>
+                <label><input type="radio" name="q4" value="c"> الزجاج</label>
+            </div>
+        </div>
+		
+		<!-- السؤال الخامس -->
+        <div class="question" data-question="q5">
+            <p>5. ما الذي يميز المادة غير المتجانسة؟</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> تباين الخصائص</label>
+                <label><input type="radio" name="q5" value="b"> جميع أجزائها تبدو متشابهة</label>
+                <label><input type="radio" name="q5" value="c"> تحتوي على عنصر واحد فقط</label>
+            </div>
+        </div>
+		<!-- السؤال السادس -->
+        <div class="question" data-question="q6">
+            <p>6. ذهبت إلى صديقك وقدم لك كوب من الشاي لكن لم يكن حلو المذاق وقام بإضافة ملعقة من السكر ماذا يمكن تصنف هذا الكوب؟  </p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="b"> خليط غير متجانس</label>
+				<label><input type="radio" name="q6" value="a"> خليط متجانس</label>
+                <label><input type="radio" name="q6" value="c">  خليط نقي</label>
+            </div>
+        </div>
+		
+				<!-- السؤال السابع -->
+        <div class="question" data-question="q7">
+            <p>7. ماء البحر خليط متجانس والسبب يعود إلى؟ </p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="b">خليط نقي جداً</label>
+				<label><input type="radio" name="q7" value="a"> يمكن تمييز مكونات الخليط بالعين المجردة</label>
+                <label><input type="radio" name="q7" value="c"> لا يمكن تمييز مكونات الخليط بالعين المجردة</label>
+            </div>
+        </div>
+
+				<!-- السؤال الثامن -->
+        <div class="question" data-question="q8">
+            <p>8. لماذا يُعد الدم مخلوطًا متجانسًا في بعض الأحيان وغير متجانس في أخرى؟ </p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="b">لأنه يتغير مع مرور الوقت</label>
+				<label><input type="radio" name="q8" value="a">لأنه صلب وسائل في الوقت نفسه</label>
+                <label><input type="radio" name="q8" value="c"> لأنه يبدو كمادة واحدة ولكن يمكن فصل مكوناته</label>
+            </div>
+        </div>
+		
+				<!-- السؤال التاسع -->
+        <div class="question" data-question="q9">
+            <p>9. ما سبب تصنيف الفضّة كمادة نقية؟ </p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="b">لأنها مكونة من أكثر من عنصر</label>
+				<label><input type="radio" name="q9" value="a">لأنها تحتوي على نوع واحد من الدقائق</label>
+                <label><input type="radio" name="q9" value="c"> لأنها قابلة للذوبان</label>
+            </div>
+        </div>
+		
+		
+						<!-- السؤال العاشر -->
+        <div class="question" data-question="q10">
+            <p>10. خالد قرر أن يصنع لعبة علمية، فوضع برادة حديد مع الأرز في علبة بلاستيكية. ثم استخدم مغناطيسًا لفصل برادة الحديد.
+                بعد نجاحه، قال: "واو! هذا سهل، لم تتغير مكونات المواد!"
+                   ما الذي يصف ما فعله خالد؟ </p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="b"> تكوين مخلوط متجانس </label>
+				<label><input type="radio" name="q10" value="a"> تغيير في الحالة الفيزيائية </label>
+                <label><input type="radio" name="q10" value="c"> فصل مكونات مخلوط غير متجانس </label>
+            </div>
+        </div>
+
+        <button type="submit" class="submit-btn">إرسال الإجابات</button>
+        <div id="result" class="result"></div>
+    </form>
+</div>
+
+<script>
+    // الإجابات الصحيحة لكل سؤال
+    const correctAnswers = {
+        q1: 'a',
+        q2: 'b',
+        q3: 'b',
+		q4: 'c',
+		q5: 'a',
+	    q6: 'a',
+		q7: 'c',
+		q8: 'c',
+		q9: 'a',
+		q10: 'c',		
+    };
+
+    // عند إرسال النموذج
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // التأكد من إدخال اسم الطالب
+        const nameField = document.getElementById("name");
+        if (!nameField.value.trim()) {
+            alert("يرجى إدخال اسم الطالب.");
+            return;
+        }
+
+        let score = 0;
+        let data = {
+            name: nameField.value.trim()
+        };
+
+        // التحقق من الإجابات
+        for (let q in correctAnswers) {
+            const questionDiv = document.querySelector(`[data-question="${q}"]`); 
+            const selected = questionDiv.querySelector(`input[name="${q}"]:checked`);
+            const correctValue = correctAnswers[q];
+
+            if (selected) {
+                const labels = questionDiv.querySelectorAll('label');
+                labels.forEach(label => {
+                    const input = label.querySelector('input');
+                    label.style.color = '';
+                    label.style.fontWeight = '';
+                    if (input.value === correctValue) {
+                        label.classList.add('correct-answer');
+                    } else if (input.checked && input.value !== correctValue) {
+                        label.classList.add('wrong-answer');
+                    }
+                });
+
+                if (selected.value === correctValue) score++;
+                data[q] = selected.value;
+            } else {
+                data[q] = "لم يتم اختيار إجابة";
+            }
+        }
+
+        // إضافة الدرجة والوقت
+        data.score = score;
+        data.timestamp = new Date().toLocaleString("ar-PS");
+		timeZone: "Asia/Gaza"
+
+        // عرض النتيجة
+        document.getElementById("result").textContent = `عزيزي الطالب:  ${data.name}، لقد حصلت على ${score} من ${Object.keys(correctAnswers).length} درجات.`;
+
+        // إرسال البيانات إلى Google Sheets عبر API
+        fetch("https://script.google.com/macros/s/AKfycbw7boh5FjW2LyPhq4CNO2NwKAILqionzswNdrWVUvGK9rYKoiW6nAND8AmUlMItsaHS/exec", {
+            method: "POST",
+            body: JSON.stringify(data)
+        }).then(res => {
+        if (res.ok) {
+    //      alert("✅ تم الإرسال بنجاح!");
+          this.reset(); 
+        } else {
+    //      alert("❌ حدث خطأ أثناء الإرسال.");
+        }
+      }).catch(err => {
+    //    alert("❌ فشل الاتصال بالخادم.");
+        console.error(err);
+      });
+    });
+</script>
+</body>
+</html>
